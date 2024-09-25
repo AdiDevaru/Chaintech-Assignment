@@ -1,0 +1,14 @@
+{% extends 'playground/main.html' %}
+
+{% block content %}
+
+<h1>Add Quote</h1>
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock content %}

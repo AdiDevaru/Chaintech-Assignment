@@ -1,0 +1,18 @@
+{% extends 'playground/main.html' %} 
+{% block content %}
+
+<div>
+    <h1>User Profile</h1>
+</div>
+<hr>
+<div style="display: felx;">
+    <div class="card text-center text-bg-dark mt-4" style="width: 300px;">
+        <h5 class="card-header">{{user.first_name}} {{user.last_name}}</h5>
+        <div class="card-body">
+        <p class="card-text"><i>Email: {{user.email}}</i></p>
+        <p class="card-text"><i>@{{user.username}}</i></p>
+        <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

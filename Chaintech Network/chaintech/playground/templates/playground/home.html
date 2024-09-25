@@ -1,0 +1,19 @@
+{% extends 'playground/main.html' %} 
+{% block content %}
+
+<h1>Quotes Page</h1>
+
+{% for quote in quotes %}
+    <div class="mb-3">
+        <h4>{{quote.body}}</h4>
+        <p>Posted by <b>{{quote.user}}</b> on {{quote.create}}</p>
+        {% if request.user == quote.user %}
+            <a href="{% url 'updateQuote' quote.id %}">Edit</a>
+            <a href="{% url 'deleteQuote' quote.id %}">Delete</a><hr>
+        {% endif %}
+            
+    </div>
+    
+{% endfor %}
+    
+{% endblock content %}

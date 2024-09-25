@@ -1,0 +1,17 @@
+{% extends 'playground/main.html' %}
+{% block content %}
+
+<h1>Register</h1>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <form method='POST'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-primary" style="margin-top:10px ;" class="button" type='submit' value='SignUp' />
+        </form>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+
+{% endblock content %}
